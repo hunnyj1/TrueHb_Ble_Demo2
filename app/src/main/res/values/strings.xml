@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">TrueHb BLE</string>
+    <string name="device">Select Device</string>
+</resources>

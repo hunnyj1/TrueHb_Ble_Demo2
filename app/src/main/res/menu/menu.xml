@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:title="Power OFF"
+        android:icon="@drawable/baseline_power_settings_new_24"
+        android:id="@+id/power"
+        app:showAsAction="ifRoom"/>
+    <item android:title="Test Result"
+        android:id="@+id/testresult"/>
+    <item android:title="Export Csv"
+        android:id="@+id/exportcsv"/>
+    <item android:title="Exit"
+        android:id="@+id/exit"/>
+</menu>
