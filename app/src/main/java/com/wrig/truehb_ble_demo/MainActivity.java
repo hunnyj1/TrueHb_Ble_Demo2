@@ -344,10 +344,16 @@ public class MainActivity extends AppCompatActivity implements GattClientActionL
             mBluetoothLeScanner.stopScan(mScanCallback);
             scanComplete();
         }
+        else
+        {
+            showToast("No device found");
+        }
 
         mScanCallback = null;
         mScanning = false;
         mHandler = null;
+        scanprogressDialog.dismiss();
+
 
     }
     private void scanComplete() {
@@ -511,7 +517,7 @@ deviceArrayList.clear();
     }
 
     public void device_off(View view) {
-        sendMessage("U370");
+       // sendMessage("U370");
         disconnectGattServer();
     }
 
@@ -528,6 +534,7 @@ deviceArrayList.clear();
         @Override
         public void onScanResult(int callbackType, ScanResult result) {
             addScanResult(result);
+
         }
 
         @Override
@@ -540,6 +547,8 @@ deviceArrayList.clear();
         @Override
         public void onScanFailed(int errorCode) {
             logError("BLE Scan Failed with code " + errorCode);
+            scanprogressDialog.dismiss();
+
         }
 
         private void addScanResult(ScanResult result) {
